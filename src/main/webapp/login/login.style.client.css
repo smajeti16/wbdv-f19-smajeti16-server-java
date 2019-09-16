@@ -28,7 +28,7 @@ input {
 	box-sizing: border-box;
 }
 
-button.SignIn {
+button {
 	background-color: #2F4F4F;
 	border: none;
 	color: white;
@@ -42,16 +42,19 @@ button.SignIn {
 	box-sizing: border-box;
 }
 
-button.SignIn:hover {
+button:hover {
 	background-color: #708090;
 	color: white;
 }
 
 a {
 	font-family: "Trebuchet MS";
-	background-color: transparent;
-	font-size: 9;
-	padding-bottom: 20px;
+	font-size: 11px;
+	color: #2F4F4F;
+	text-decoration: underline;
+	text-align: center;
+	display: inline-block;
+	padding-bottom: 15px;
 }
 
 
