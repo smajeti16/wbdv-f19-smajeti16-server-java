@@ -1,0 +1,17 @@
+nav {
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+	background-color: #DCDCDC;
+}
+
+a {
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+	width: 100%;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
