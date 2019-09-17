@@ -1,0 +1,48 @@
+nav {
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+	background-color: #DCDCDC;
+}
+
+
+.container {
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	top: 10%;
+}
+
+h1 {
+	font-size: 24pt;
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+}
+
+h2 {
+	font-size: 18pt;
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+}
+
+input {
+	font-family: "Trebuchet MS";
+	width: 50%;
+	padding: 12px 20px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+label {
+	font-family: "Trebuchet MS";
+	font-size: 22px;
+	color: #708090;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+span {
+	margin-left: 25px;
+	margin-right: 25px;
+}
