@@ -18,6 +18,12 @@ h1 {
 	color: #2F4F4F;
 }
 
+h2 {
+	font-size: 18pt;
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+}
+
 input {
 	font-family: "Trebuchet MS";
 	width: 50%;
@@ -26,4 +32,17 @@ input {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
+}
+
+label {
+	font-family: "Trebuchet MS";
+	font-size: 22px;
+	color: #708090;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+span {
+	margin-left: 25px;
+	margin-right: 25px;
 }
