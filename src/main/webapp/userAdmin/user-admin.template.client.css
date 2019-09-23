@@ -1,0 +1,29 @@
+.container {
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	top: 10%;
+}
+
+h1 {
+	font-size: 24pt;
+	font-family: "Trebuchet MS";
+	color: #2F4F4F;
+}
+
+label {
+	font-family: "Trebuchet MS";
+	color: #708090;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+input {
+	font-family: "Trebuchet MS";
+	width: 70%;
+	padding: 6px 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
