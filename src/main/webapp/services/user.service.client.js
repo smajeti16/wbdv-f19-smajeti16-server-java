@@ -7,10 +7,11 @@ function AdminUserServiceClient() {
     this.url = 'https://wbdv-generic-server.herokuapp.com/api/jannunzi/users';
     var self = this;
     function createUser(user, callback) {
-
+    	findAllUsers(callback);
     }
-    function findAllUsers(callback) { 
 
+    function findAllUsers(callback) {
+    	
     }
     function findUserById(userId, callback) { 
 
