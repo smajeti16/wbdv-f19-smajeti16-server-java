@@ -26,8 +26,8 @@ function AdminUserServiceClient() {
     }
 
     function findUserById(userId, callback) { 
-    	fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users/" + userId)
-                    .then(callback(data));
+    	// fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users/" + userId)
+     //                .then(callback(data));
     }
 
     function updateUser(userId, user, callback) {
@@ -37,6 +37,6 @@ function AdminUserServiceClient() {
     function deleteUser(userId, callback) {
     	fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users/" + userId, {
 			method: 'delete'})
-		.then(findAllUsers(callback));
+		.then(response => callback());
     }
 }

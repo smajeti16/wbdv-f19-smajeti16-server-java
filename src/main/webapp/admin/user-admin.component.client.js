@@ -49,28 +49,28 @@
     }
 
     function findUserById(event, func) { 
-        var event = $(event.currentTarget);
-        userService.findUserById(event, func);
+        // var event = $(event.currentTarget);
+        // userService.findUserById(event, func);
     }
 
 
     function deleteUser(event) { 
         var user = $(event.target);
         var userId = user.attr("id");
-        userService.deleteUser(userId, renderUsers);
+        userService.deleteUser(userId, findAllUsers);
     }
 
 
     function selectUser(event) { 
-        var cur = $(event.currentTarget);
-        var row = cur.parents(".wbdv-template");
+        var curUser = $(event.currentTarget);
+        var userId = user.attr("id");
         $usernameFld.val(row.find(".wbdv-username").text());
         $updateBtn.click(updateUser(row));
         // $usernameFld.val(row.find(".wbdv-username").text());
 
     }
 
-    function updateUser(row) { 
+    function updateUser(userId) { 
         alert("updateUserClicked");
         row.find(".wbdv-username").text($usernameFld.val());
     }
@@ -98,11 +98,10 @@
             .removeClass("wbdv-hidden")
             .find(".wbdv-role")
             .html(user.role);
-
         newUser
             .find(".wbdv-remove")
-            .attr("id", user.id);
-            // .click(deleteUser);
+            .attr("id", user.id)
+            .click(deleteUser);
 
         newUser
             .find(".wbdv-edit")
