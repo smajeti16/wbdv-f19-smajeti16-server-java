@@ -22,6 +22,7 @@
         findAllUsers();
 
         $createBtn.click(createUser);
+        $updateBtn.click(findUserById);
     }
 
     function createUser() { 
@@ -38,33 +39,25 @@
 
         const user = {username:username, password:password, firstName:firstName, lastName:lastName, role:role, id:id}
         
+        userService.createUser(user, findAllUsers);
 
-        fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users", {
-            method: 'post',
-            body: JSON.stringify(user),
-            headers: {
-                'content-type': 'application/json'
-            }
-        }).then(response => findAllUsers())
     }
 
     function findAllUsers() {
-        fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users")
-                    .then(response => response.json()
-                    .then(function(data) {
-                        renderUsers(data);
-                    }));
+        userService.findAllUsers(renderUsers);
+
     }
 
-    function findUserById() { 
-        
+    function findUserById(event, func) { 
+        var event = $(event.currentTarget);
+        userService.findUserById(event, func);
     }
 
 
     function deleteUser(event) { 
-        var button = $(event.currentTarget);
-        var rmv = button.parents(".wbdv-template");
-        rmv.remove();
+        var user = $(event.target);
+        var userId = user.attr("id");
+        userService.deleteUser(userId, renderUsers);
     }
 
 
@@ -108,8 +101,8 @@
 
         newUser
             .find(".wbdv-remove")
-            .attr("id", user.id)
-            .click(deleteUser);
+            .attr("id", user.id);
+            // .click(deleteUser);
 
         newUser
             .find(".wbdv-edit")
