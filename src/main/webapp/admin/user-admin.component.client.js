@@ -4,7 +4,6 @@
     var $firstNameFld, $lastNameFld;
     var $userRowTemplate, $tbody;
     var userService = new AdminUserServiceClient();
-    var users = [];
     $(main);
 
     function main() {
@@ -20,8 +19,7 @@
         $createBtn = $("#createBtn");
         $updateBtn = $("#updateBtn");
 
-        users = findAllUsers();
-        renderUsers(findAllUsers);
+        findAllUsers();
 
         $createBtn.click(createUser);
     }
@@ -47,9 +45,7 @@
             headers: {
                 'content-type': 'application/json'
             }
-        }).then(response => console.log(response))
-        users.push(user)
-        console.log(users);
+        }).then(response => findAllUsers())
     }
 
     function findAllUsers() {
@@ -61,7 +57,7 @@
     }
 
     function findUserById() { 
-
+        
     }
 
 

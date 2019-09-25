@@ -4,10 +4,10 @@ function AdminUserServiceClient() {
     this.findUserById = findUserById;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
-    this.url = 'https://wbdv-generic-server.herokuapp.com/api/jannunzi/users';
+    this.url = 'https://wbdv-generic-server.herokuapp.com/api/001604056/users';
     var self = this;
     function createUser(user, callback) {
-    	findAllUsers(callback);
+    	
     }
 
     function findAllUsers(callback) {
