@@ -1,4 +1,4 @@
-/*.container {
+.container {
 	position: absolute;
 	left: 10%;
 	right: 10%;
@@ -28,7 +28,7 @@ input {
 	box-sizing: border-box;
 }
 
-*/
+
 
 
 .wbdv-hidden {
