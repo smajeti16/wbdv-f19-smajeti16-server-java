@@ -26,12 +26,21 @@ function AdminUserServiceClient() {
     }
 
     function findUserById(userId, callback) { 
-    	// fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users/" + userId)
-     //                .then(callback(data));
+    	fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users/" + userId)
+                    .then(response => response.json()
+                    .then(function(data) {
+                        callback(data);
+                    }));
     }
 
     function updateUser(userId, user, callback) {
-
+    	fetch("https://wbdv-generic-server.herokuapp.com/api/001604056/users/" + userId, {
+            method: 'put',
+            body: JSON.stringify(user),
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(response => callback());
     }
 
     function deleteUser(userId, callback) {

@@ -22,7 +22,7 @@
         findAllUsers();
 
         $createBtn.click(createUser);
-        $updateBtn.click(findUserById);
+        $updateBtn.click(updateUser);
     }
 
     function createUser() { 
@@ -48,9 +48,8 @@
 
     }
 
-    function findUserById(event, func) { 
-        // var event = $(event.currentTarget);
-        // userService.findUserById(event, func);
+    function findUserById(userId) { 
+        userService.findUserById(userId, updateFld);
     }
 
 
@@ -63,16 +62,36 @@
 
     function selectUser(event) { 
         var curUser = $(event.currentTarget);
-        var userId = user.attr("id");
-        $usernameFld.val(row.find(".wbdv-username").text());
-        $updateBtn.click(updateUser(row));
-        // $usernameFld.val(row.find(".wbdv-username").text());
+        var userId = curUser.attr("id");
+        const td = curUser.parent();
+        const tr = td.parent().parent().parent().parent();
+        tr.find(".wbdv-update").attr("id", userId);
+        // console.log(tr.find(".wbdv-update").attr("id"));
+        findUserById(userId);
 
     }
 
-    function updateUser(userId) { 
-        alert("updateUserClicked");
-        row.find(".wbdv-username").text($usernameFld.val());
+    function updateFld(user) {
+        $usernameFld.val(user.username);
+        $passwordFld.val(user.password);
+        $firstNameFld.val(user.firstName);
+        $lastNameFld.val(user.lastName);
+        $roleFld.val( user.role);
+    }
+
+    function updateUser(event) {
+        var curUser = $(event.currentTarget);
+        var userId = curUser.attr("id");
+        const user = {username:$usernameFld.val(), 
+            password:$passwordFld.val(), 
+            firstName:$firstNameFld.val(), 
+            lastName:$lastNameFld.val(), 
+            role:$roleFld.val(), id:userId};
+        $usernameFld.val("");
+        $passwordFld.val("");
+        $firstNameFld.val("");
+        $lastNameFld.val("");
+        userService.updateUser(userId, user, findAllUsers);
     }
 
     function renderUser(user) {
