@@ -19,6 +19,11 @@ public class Widget {
     private String style;
     private String value;
     private DataType dataType;
+    private String title;
+
+    public Widget() {
+
+    }
 
     public Widget(String name, int id, Type type, int order, String text, String url, 
                     int size, String cssClass, String style, String value, DataType dataType) {
@@ -32,6 +37,27 @@ public class Widget {
         this.cssClass = cssClass;
         this.style = style;
         this.value = value;
+    }
+    
+    public Widget(Integer id, String title) {
+        this.id = id;
+        this.title = title;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
 }
