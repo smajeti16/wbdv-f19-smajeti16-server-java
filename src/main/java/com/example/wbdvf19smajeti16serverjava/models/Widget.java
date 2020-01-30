@@ -1,6 +1,19 @@
 package com.example.wbdvf19smajeti16serverjava.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "widget")
 public class Widget {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     enum Type {
         Heading, List, Paragraph, Image, YouTube, HTML, Link;
     }
@@ -9,7 +22,6 @@ public class Widget {
         Integer, String, Date, Boolean;
     }
     private String name;
-    private int id;
     private Type type;
     private int order;
     private String text;

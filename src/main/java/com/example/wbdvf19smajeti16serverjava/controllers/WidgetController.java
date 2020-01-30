@@ -74,13 +74,9 @@ public class WidgetController {
     // // updateWidget
     // // deleteWidget
 
-    // @GetMapping("/api/hello")
-    // public String sayHello() {
-    //     return "Hello!";
-    // }
-    // @GetMapping("/get/widget")
-    // public Widget getWidget() {
-    //     Widget w = new Widget(123, "Heading 1");
-    //     return w;
-    // }
+    @GetMapping("/get/widget")
+    public Widget getWidget() {
+        Widget w = new Widget(123, "Heading 1");
+        return w;
+    }
 }

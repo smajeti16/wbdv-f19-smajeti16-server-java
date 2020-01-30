@@ -53,7 +53,7 @@ public class CourseController {
     }
 
     @GetMapping("/api/courses")
-    public List<Course> findAllCourse() {
+    public List<Course> findAllCourses() {
         return courses;
     }
 
@@ -74,13 +74,9 @@ public class CourseController {
     // updateCourse
     // deleteCourse
 
-    // @GetMapping("/api/hello")
-    // public String sayHello() {
-    //     return "Hello!";
-    // }
-    // @GetMapping("/get/course")
-    // public Course getCourse() {
-    //     Course w = new Course(123, "Heading 1");
-    //     return w;
-    // }
+    @GetMapping("/get/course")
+    public Course getCourse() {
+        Course w = new Course(123, "Heading 1");
+        return w;
+    }
 }
