@@ -68,19 +68,19 @@ public class WidgetController {
         return null;
     }
 
-    // createWidget
-    // findAllWidgets
-    // findWidgetById
-    // updateWidget
-    // deleteWidget
+    // // createWidget
+    // // findAllWidgets
+    // // findWidgetById
+    // // updateWidget
+    // // deleteWidget
 
-    @GetMapping("/api/hello")
-    public String sayHello() {
-        return "Hello!";
-    }
-    @GetMapping("/get/widget")
-    public Widget getWidget() {
-        Widget w = new Widget(123, "Heading 1");
-        return w;
-    }
+    // @GetMapping("/api/hello")
+    // public String sayHello() {
+    //     return "Hello!";
+    // }
+    // @GetMapping("/get/widget")
+    // public Widget getWidget() {
+    //     Widget w = new Widget(123, "Heading 1");
+    //     return w;
+    // }
 }
